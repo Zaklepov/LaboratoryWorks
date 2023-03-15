@@ -1,13 +1,15 @@
+package tests;
+
+import main.AddressBook;
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class AddressBookTest {
     @Test
-    void AddressBookMoscow() {
+    public void AddressBookMoscow() {
         AddressBook Moscow = new AddressBook();
 
         Moscow.add("Камокин", "Аргуновская улица, дом 1, 17 квартира");

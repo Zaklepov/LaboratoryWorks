@@ -1,4 +1,5 @@
-import org.hamcrest.core.AnyOf;
+package main;
+
 
 import java.util.*;
 import java.util.regex.Matcher;
@@ -7,8 +8,8 @@ import java.util.regex.Pattern;
 public class AddressBook {
     HashMap<String, String> mapOfAddresses;
 
-    AddressBook() {
-        this.mapOfAddresses = new HashMap<String, String>();
+    public AddressBook() {
+        this.mapOfAddresses = new HashMap<>();
     }
 
     public void add(String name, String address) {
@@ -27,13 +28,13 @@ public class AddressBook {
         return (mapOfAddresses.get(name));
     }
 
-    public Set getPeopleOnAddress(String address) {
-        Set<String> people = new HashSet<String>();
+    public Set<String> getPeopleOnAddress(String address) {
+        Set<String> people = new HashSet<>();
         for (Map.Entry<String, String> entry : mapOfAddresses.entrySet()) {
             Pattern addressNeeded = Pattern.compile(address);
             Matcher addressFromMap = addressNeeded.matcher(entry.getValue());
             if (addressFromMap.find()) {
-                 people.add(entry.getKey());
+                people.add(entry.getKey());
             }
         }
         return (people);
